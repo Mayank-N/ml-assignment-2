@@ -16,16 +16,16 @@ The objective is to train, evaluate, and compare **five classical machine learni
 
 ## Dataset Description
 
-| Property           | Value                                                                          |
-| ------------------ | ------------------------------------------------------------------------------ |
-| **Name**           | Dry Bean Dataset                                                               |
-| **Source**         | UCI Machine Learning Repository                                                |
-| **Records**        | 13,611                                                                         |
-| **Features**       | 16 real-valued numeric features                                                |
-| **Target Column**  | `Class`                                                                        |
+| Property                 | Value                                                                                                |
+| ------------------------ | ---------------------------------------------------------------------------------------------------- |
+| **Name**           | Dry Bean Dataset                                                                                     |
+| **Source**         | UCI Machine Learning Repository                                                                      |
+| **Records**        | 13,611                                                                                               |
+| **Features**       | 16 real-valued numeric features                                                                      |
+| **Target Column**  | `Class`                                                                                            |
 | **Classes**        | DERMASON (3546), SIRA (2636), SEKER (2027), HOROZ (1928), CALI (1630), BARBUNYA (1322), BOMBAY (522) |
-| **Missing Values** | None                                                                           |
-| **Duplicates**     | 68 (removed)                                                                   |
+| **Missing Values** | None                                                                                                 |
+| **Duplicates**     | 68 (removed)                                                                                         |
 
 **Features:** Sixteen morphological measurements — comprising 12 dimensional attributes (Area, Perimeter, MajorAxisLength, MinorAxisLength, AspectRation, Eccentricity, ConvexArea, EquivDiameter, Extent, Solidity, roundness, Compactness) and 4 shape factors (ShapeFactor1 through ShapeFactor4) — are computed from digital image segmentation across the 7 bean varieties.
 
@@ -68,13 +68,13 @@ ml-assignment-2/
 
 ## Five Machine Learning Models
 
-| #   | Model                      | Library Class            | Key Hyperparameters                                                        |
-| --- | -------------------------- | ------------------------ | -------------------------------------------------------------------------- |
-| 1   | **Logistic Regression**    | `LogisticRegression`     | `max_iter=1000, solver='lbfgs', C=1.0, random_state=42`                    |
-| 2   | **Decision Tree**          | `DecisionTreeClassifier` | `min_samples_split=5, min_samples_leaf=2, random_state=42`                 |
-| 3   | **K-Nearest Neighbors**    | `KNeighborsClassifier`   | `n_neighbors=7, weights='distance', metric='minkowski', p=2`               |
-| 4   | **Gaussian Naive Bayes**   | `GaussianNB`             | default                                                                    |
-| 5   | **Support Vector Machine** | `SVC`                    | `kernel='rbf', C=10, gamma='scale', probability=True, random_state=42`     |
+| # | Model                            | Library Class              | Key Hyperparameters                                                      |
+| - | -------------------------------- | -------------------------- | ------------------------------------------------------------------------ |
+| 1 | **Logistic Regression**    | `LogisticRegression`     | `max_iter=1000, solver='lbfgs', C=1.0, random_state=42`                |
+| 2 | **Decision Tree**          | `DecisionTreeClassifier` | `min_samples_split=5, min_samples_leaf=2, random_state=42`             |
+| 3 | **K-Nearest Neighbors**    | `KNeighborsClassifier`   | `n_neighbors=7, weights='distance', metric='minkowski', p=2`           |
+| 4 | **Gaussian Naive Bayes**   | `GaussianNB`             | default                                                                  |
+| 5 | **Support Vector Machine** | `SVC`                    | `kernel='rbf', C=10, gamma='scale', probability=True, random_state=42` |
 
 Each model is wrapped in a **scikit-learn Pipeline** with `StandardScaler` to prevent data leakage. The scaler is fit only on training data and applied to test data during evaluation.
 
@@ -95,13 +95,13 @@ Each model is wrapped in a **scikit-learn Pipeline** with `StandardScaler` to pr
 
 > **Test Set:** 2,709 samples | Stratified across 7 classes | `random_state=42`
 
-| Model                | Accuracy   | AUC        | Precision  | Recall     | F1 Score   | MCC        |
-| -------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| Logistic Regression  | 0.9192     | **0.9947** | 0.9197     | 0.9192     | 0.9193     | 0.9023     |
-| Decision Tree        | 0.8966     | 0.9573     | 0.8971     | 0.8966     | 0.8965     | 0.8752     |
-| K-Nearest Neighbors  | 0.9136     | 0.9854     | 0.9144     | 0.9136     | 0.9138     | 0.8956     |
-| Naive Bayes          | 0.8970     | 0.9911     | 0.8997     | 0.8970     | 0.8972     | 0.8762     |
-| **SVM (RBF kernel)** | **0.9236** | 0.9944     | **0.9238** | **0.9236** | **0.9236** | **0.9076** |
+| Model                      | Accuracy         | AUC              | Precision        | Recall           | F1 Score         | MCC              |
+| -------------------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
+| Logistic Regression        | 0.9192           | **0.9947** | 0.9197           | 0.9192           | 0.9193           | 0.9023           |
+| Decision Tree              | 0.8966           | 0.9573           | 0.8971           | 0.8966           | 0.8965           | 0.8752           |
+| K-Nearest Neighbors        | 0.9136           | 0.9854           | 0.9144           | 0.9136           | 0.9138           | 0.8956           |
+| Naive Bayes                | 0.8970           | 0.9911           | 0.8997           | 0.8970           | 0.8972           | 0.8762           |
+| **SVM (RBF kernel)** | **0.9236** | 0.9944           | **0.9238** | **0.9236** | **0.9236** | **0.9076** |
 
 > ✅ All metrics are computed on the held-out test set only. No data leakage. Models are never retrained on test data.
 
@@ -223,6 +223,6 @@ The app will open at `http://localhost:8501`. Upload `test_data.csv` and select 
 
 ## Streamlit Deployment
 
-> 🌐 **Live App URL:** `https://ml-assignment-2-mayank.streamlit.app/`
+> 🌐 **Live App URL:** https://ml-assignment-2-2026aj05561.streamlit.app/
 
 The application is deployed on Streamlit Community Cloud and loads pre-trained models from the `model/` directory — it never retrains models from the uploaded test data.
