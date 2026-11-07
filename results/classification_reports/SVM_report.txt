@@ -1,0 +1,19 @@
+Classification Report – SVM
+============================================================
+Averaging: weighted (Precision, Recall, F1)
+AUC      : macro OvR
+============================================================
+
+              precision    recall  f1-score   support
+
+    BARBUNYA     0.9237    0.9132    0.9184       265
+      BOMBAY     1.0000    1.0000    1.0000       104
+        CALI     0.9245    0.9387    0.9315       326
+    DERMASON     0.9148    0.9238    0.9193       709
+       HOROZ     0.9694    0.9382    0.9536       372
+       SEKER     0.9439    0.9532    0.9485       406
+        SIRA     0.8726    0.8710    0.8718       527
+
+    accuracy                         0.9236      2709
+   macro avg     0.9356    0.9340    0.9347      2709
+weighted avg     0.9238    0.9236    0.9236      2709

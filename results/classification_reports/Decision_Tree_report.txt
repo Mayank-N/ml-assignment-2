@@ -1,0 +1,19 @@
+Classification Report – Decision Tree
+============================================================
+Averaging: weighted (Precision, Recall, F1)
+AUC      : macro OvR
+============================================================
+
+              precision    recall  f1-score   support
+
+    BARBUNYA     0.8385    0.9208    0.8777       265
+      BOMBAY     1.0000    1.0000    1.0000       104
+        CALI     0.9102    0.9018    0.9060       326
+    DERMASON     0.8909    0.9097    0.9002       709
+       HOROZ     0.9634    0.9194    0.9409       372
+       SEKER     0.9197    0.9310    0.9253       406
+        SIRA     0.8423    0.8008    0.8210       527
+
+    accuracy                         0.8966      2709
+   macro avg     0.9093    0.9119    0.9102      2709
+weighted avg     0.8971    0.8966    0.8965      2709

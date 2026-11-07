@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+venv/
+env/
+.venv/
+ENV/
+
+# macOS
+.DS_Store
+
+# Streamlit
+.streamlit/
+
+# Generated visualizations (generated dynamically by train.py and app.py)
+results/**/*.png
+results/model_comparison_chart.png
+
